@@ -1,41 +1,49 @@
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int num1,num2,i,total;
+    float num1,num2, result, decimal;
+    int total, i;
+
     printf("Enter two numbers: ");
-    scanf("%d %d",&num1,&num2);
-    do
-    {
-        printf("\nenter 1 for + : ");
-        printf("\nenter 2 for - : ");
-        printf("\nenter 3 for * : ");
-        printf("\nenter 4 for / : \n");
+    scanf("%f %f",&num1,&num2);
 
-        scanf("%d",&i);
-
-        switch(i)
+        do
         {
-        case 1:
-            printf("\nThe ans. is : %d\n",num1+num2);
-            total+=1;
-            break;
-        case 2:
-            printf("\nThe ans. is :%d\n",num1-num2);
-            total+=1;
-            break;
-        case 3:
-            printf("\nThe ans. is :%d\n",num1*num2);
-            total+=1;
-            break;
-        case 4:
-            printf("\nThe ans. is :%d\n",num1/num2);
-            total+=1;
-            break;
-        default:
-            printf("\nenter valid option\n");
+            printf("\nenter 1 for + : ");
+            printf("\nenter 2 for - : ");
+            printf("\nenter 3 for * : ");
+            printf("\nenter 4 for / : \n");
+            scanf("%d",&i);
+
+            switch(i)
+            {
+            case 1:
+                result = num1+num2;
+                decimal = (ceil(result) == floor(result)) ? printf("\nAnswer : %.f\n",result) : printf("\nAnswer : %.4f\n",result) ;
+                total+=1;
+                break;
+            case 2:
+                result = num1-num2;
+                decimal = (ceil(result) == floor(result)) ? printf("\nAnswer : %.f\n",result) : printf("\nAnswer : %.4f\n",result) ;
+                total+=1;
+                break;
+            case 3:
+                result = num1*num2;
+                decimal = (ceil(result) == floor(result)) ? printf("\nAnswer : %.f\n",result) : printf("\nAnswer : %.4f\n",result) ;
+                total+=1;
+                break;
+            case 4:
+                result = num1/num2;
+                decimal = (ceil(result) == floor(result)) ? printf("\nAnswer : %.f\n",result) : printf("\nAnswer : %.4f\n",result) ;
+                total+=1;
+                break;
+            default:
+                printf("\nEnter valid option\n");
+            }
         }
-    }
-    while(i!=0);
-    printf("Number of operations: %d\n",total);
+        while(i!=0);
+        printf("Number of operations: %d\n",total);
+
+        return (0);
+
 }
